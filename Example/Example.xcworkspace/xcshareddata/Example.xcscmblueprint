@@ -1,0 +1,35 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "fbf7c5fc-741e-864f-b003-8970bdfe061d++3278",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "fbf7c5fc-741e-864f-b003-8970bdfe061d++3278" : {
+
+    },
+    "fbf7c5fc-741e-864f-b003-8970bdfe061d++1869" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "fbf7c5fc-741e-864f-b003-8970bdfe061d++3278" : 0,
+    "fbf7c5fc-741e-864f-b003-8970bdfe061d++1869" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "26DF732C-3503-4069-8B3A-0356195D0146",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "fbf7c5fc-741e-864f-b003-8970bdfe061d++3278" : "CNNetwork2.0\/",
+    "fbf7c5fc-741e-864f-b003-8970bdfe061d++1869" : "CNNetwork\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Example",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/Example.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.103\/svn\/ecoalstore",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "fbf7c5fc-741e-864f-b003-8970bdfe061d++1869"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.103\/svn\/ecoalstore",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "fbf7c5fc-741e-864f-b003-8970bdfe061d++3278"
+    }
+  ]
+}

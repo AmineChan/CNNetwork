@@ -1,0 +1,35 @@
+/* AUTO-GENERATED FILE.  DO NOT MODIFY.
+*
+* 该文件自动生成，请不要修改！
+*/
+
+#import <Foundation/Foundation.h>
+#import <CNNetwork/CNNetwork.h>
+
+//api tag
+typedef enum
+{
+    API_TAG_NONE,
+{{#apiInfo}}
+{{#apis}}
+{{#operations}}
+{{#operation}}
+    API_TAG_{{vendorExtensions.x-objc-operationId}},{{#notes}}//{{notes}}{{/notes}}
+{{/operation}}
+{{/operations}}
+{{/apis}}
+{{/apiInfo}}
+
+}ENUM_API_TAG;
+
+@protocol {{classPrefix}}Api <NSObject>
+
+- (CNRequest *)apiRequest;
+
+@end
+
+@interface {{classPrefix}}ApiObj: NSObject <{{classPrefix}}Api>
+
+- (void)startWithCompletionBlock:(CNBatchRequestCompleteBlock)completionBlock;
+
+@end

@@ -1,0 +1,45 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Api (1.0.0):
+    - AFNetworking (~> 3)
+    - ISO8601 (~> 0.5)
+    - JSONModel (~> 1.2)
+  - CNNetwork (0.0.1):
+    - AFNetworking
+  - ISO8601 (0.6.0)
+  - JSONModel (1.5.1)
+
+DEPENDENCIES:
+  - Api (from `./Api`)
+  - CNNetwork (from `../CNNetwork.podspec`)
+
+EXTERNAL SOURCES:
+  Api:
+    :path: ./Api
+  CNNetwork:
+    :path: ../CNNetwork.podspec
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Api: 083e1986f97750b721a7c5a5e91e3f39b65aeb96
+  CNNetwork: 6295b0a9835cf58e09020d41b9a88efae9527bdb
+  ISO8601: d3ea3ba9b752820cf92c6b47a9ee327e9f0e13fc
+  JSONModel: fd2553dc9e6608a3f35bfc956a14be35395d3852
+
+PODFILE CHECKSUM: 5b0c0b2932a77c7676f07f546696772f3bb48e1b
+
+COCOAPODS: 1.1.1

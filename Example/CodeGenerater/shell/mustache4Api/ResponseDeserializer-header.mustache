@@ -1,0 +1,37 @@
+/* AUTO-GENERATED FILE.  DO NOT MODIFY.
+*
+* 该文件自动生成，请不要修改！
+*/
+
+#import <Foundation/Foundation.h>
+#import "CNNetwork.h"
+
+/**
+ * A key for deserialization ErrorDomain
+ */
+extern NSString *const {{classPrefix}}DeserializationErrorDomainKey;
+
+/**
+ * Code for deserialization type mismatch error
+ */
+extern NSInteger const {{classPrefix}}TypeMismatchErrorCode;
+
+/**
+ * Code for deserialization empty value error
+ */
+extern NSInteger const {{classPrefix}}EmptyValueOccurredErrorCode;
+
+/**
+ * Error code for unknown response
+ */
+extern NSInteger const {{classPrefix}}UnknownResponseObjectErrorCode;
+
+@interface {{classPrefix}}ResponseDeserializer : NSObject <CNNetworkResponseDeserializer>
+
+/**
+ *  If an null value occurs in dictionary or array if set to YES whole response will be invalid else will be ignored
+ *  @default NO
+ */
+@property (nonatomic, assign) BOOL treatNullAsError;
+
+@end

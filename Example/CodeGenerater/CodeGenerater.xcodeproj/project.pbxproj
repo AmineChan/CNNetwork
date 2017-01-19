@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		012AC444197E35E400D8649A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012AC443197E35E400D8649A /* Cocoa.framework */; };
+		012AC44E197E35E400D8649A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 012AC44C197E35E400D8649A /* InfoPlist.strings */; };
+		012AC450197E35E400D8649A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 012AC44F197E35E400D8649A /* main.m */; };
+		012AC454197E35E400D8649A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 012AC452197E35E400D8649A /* Credits.rtf */; };
+		012AC45F197E35E400D8649A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012AC45E197E35E400D8649A /* Images.xcassets */; };
+		012AC4CC197E36A100D8649A /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 012AC4C3197E36A100D8649A /* Document.m */; };
+		012AC4CD197E36A100D8649A /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012AC4C4197E36A100D8649A /* Document.xib */; };
+		110A853D1CD04B200046D29F /* SwaggerGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 110A853C1CD04B200046D29F /* SwaggerGenerator.m */; };
+		112DF4FB1E2F12CA000F1A89 /* code.config in Resources */ = {isa = PBXBuildFile; fileRef = 112DF4E21E2F12CA000F1A89 /* code.config */; };
+		112DF50F1E2F12CA000F1A89 /* spec.json in Resources */ = {isa = PBXBuildFile; fileRef = 112DF4F81E2F12CA000F1A89 /* spec.json */; };
+		112DF5101E2F12CA000F1A89 /* spec.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 112DF4F91E2F12CA000F1A89 /* spec.yaml */; };
+		112DF5111E2F12CA000F1A89 /* swagger-codegen-cli.jar in Frameworks */ = {isa = PBXBuildFile; fileRef = 112DF4FA1E2F12CA000F1A89 /* swagger-codegen-cli.jar */; };
+		112DF5141E2F1332000F1A89 /* codegen4Api.sh in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5121E2F1332000F1A89 /* codegen4Api.sh */; };
+		112DF5151E2F1332000F1A89 /* codegen4Doc.sh in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5131E2F1332000F1A89 /* codegen4Doc.sh */; };
+		112DF5291E2F1354000F1A89 /* api-body.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5171E2F1354000F1A89 /* api-body.mustache */; };
+		112DF52A1E2F1354000F1A89 /* api-header.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5181E2F1354000F1A89 /* api-header.mustache */; };
+		112DF52C1E2F1354000F1A89 /* model-body.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF51A1E2F1354000F1A89 /* model-body.mustache */; };
+		112DF52D1E2F1354000F1A89 /* model-header.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF51B1E2F1354000F1A89 /* model-header.mustache */; };
+		112DF52E1E2F1354000F1A89 /* podspec.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF51C1E2F1354000F1A89 /* podspec.mustache */; };
+		112DF52F1E2F1354000F1A89 /* ResponseDeserializer-body.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF51D1E2F1354000F1A89 /* ResponseDeserializer-body.mustache */; };
+		112DF5301E2F1354000F1A89 /* ResponseDeserializer-header.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF51E1E2F1354000F1A89 /* ResponseDeserializer-header.mustache */; };
+		112DF5311E2F1354000F1A89 /* Sanitizer-body.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF51F1E2F1354000F1A89 /* Sanitizer-body.mustache */; };
+		112DF5321E2F1354000F1A89 /* Sanitizer-header.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5201E2F1354000F1A89 /* Sanitizer-header.mustache */; };
+		112DF5331E2F1354000F1A89 /* bodyParam.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5221E2F1354000F1A89 /* bodyParam.mustache */; };
+		112DF5341E2F1354000F1A89 /* formParam.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5231E2F1354000F1A89 /* formParam.mustache */; };
+		112DF5351E2F1354000F1A89 /* headerParam.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5241E2F1354000F1A89 /* headerParam.mustache */; };
+		112DF5361E2F1354000F1A89 /* index.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5251E2F1354000F1A89 /* index.mustache */; };
+		112DF5371E2F1354000F1A89 /* pathParam.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5261E2F1354000F1A89 /* pathParam.mustache */; };
+		112DF5381E2F1354000F1A89 /* queryParam.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5271E2F1354000F1A89 /* queryParam.mustache */; };
+		112DF5391E2F1354000F1A89 /* style.css.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5281E2F1354000F1A89 /* style.css.mustache */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		012AC440197E35E400D8649A /* CodeGenerater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeGenerater.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		012AC443197E35E400D8649A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		012AC446197E35E400D8649A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		012AC447197E35E400D8649A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		012AC448197E35E400D8649A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		012AC44B197E35E400D8649A /* CodeGenerater-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CodeGenerater-Info.plist"; sourceTree = "<group>"; };
+		012AC44D197E35E400D8649A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		012AC44F197E35E400D8649A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		012AC451197E35E400D8649A /* CodeGenerater-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodeGenerater-Prefix.pch"; sourceTree = "<group>"; };
+		012AC453197E35E400D8649A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		012AC45C197E35E400D8649A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		012AC45E197E35E400D8649A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		012AC465197E35E400D8649A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		012AC4C2197E36A100D8649A /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		012AC4C3197E36A100D8649A /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		012AC4C4197E36A100D8649A /* Document.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Document.xib; sourceTree = "<group>"; };
+		110A853B1CD04B200046D29F /* SwaggerGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwaggerGenerator.h; sourceTree = "<group>"; };
+		110A853C1CD04B200046D29F /* SwaggerGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwaggerGenerator.m; sourceTree = "<group>"; };
+		112DF4E21E2F12CA000F1A89 /* code.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = code.config; sourceTree = "<group>"; };
+		112DF4F81E2F12CA000F1A89 /* spec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spec.json; sourceTree = "<group>"; };
+		112DF4F91E2F12CA000F1A89 /* spec.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = spec.yaml; sourceTree = "<group>"; };
+		112DF4FA1E2F12CA000F1A89 /* swagger-codegen-cli.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; path = "swagger-codegen-cli.jar"; sourceTree = "<group>"; };
+		112DF5121E2F1332000F1A89 /* codegen4Api.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = codegen4Api.sh; sourceTree = "<group>"; };
+		112DF5131E2F1332000F1A89 /* codegen4Doc.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = codegen4Doc.sh; sourceTree = "<group>"; };
+		112DF5171E2F1354000F1A89 /* api-body.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "api-body.mustache"; sourceTree = "<group>"; };
+		112DF5181E2F1354000F1A89 /* api-header.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "api-header.mustache"; sourceTree = "<group>"; };
+		112DF51A1E2F1354000F1A89 /* model-body.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "model-body.mustache"; sourceTree = "<group>"; };
+		112DF51B1E2F1354000F1A89 /* model-header.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "model-header.mustache"; sourceTree = "<group>"; };
+		112DF51C1E2F1354000F1A89 /* podspec.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podspec.mustache; sourceTree = "<group>"; };
+		112DF51D1E2F1354000F1A89 /* ResponseDeserializer-body.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ResponseDeserializer-body.mustache"; sourceTree = "<group>"; };
+		112DF51E1E2F1354000F1A89 /* ResponseDeserializer-header.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ResponseDeserializer-header.mustache"; sourceTree = "<group>"; };
+		112DF51F1E2F1354000F1A89 /* Sanitizer-body.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Sanitizer-body.mustache"; sourceTree = "<group>"; };
+		112DF5201E2F1354000F1A89 /* Sanitizer-header.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Sanitizer-header.mustache"; sourceTree = "<group>"; };
+		112DF5221E2F1354000F1A89 /* bodyParam.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bodyParam.mustache; sourceTree = "<group>"; };
+		112DF5231E2F1354000F1A89 /* formParam.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = formParam.mustache; sourceTree = "<group>"; };
+		112DF5241E2F1354000F1A89 /* headerParam.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = headerParam.mustache; sourceTree = "<group>"; };
+		112DF5251E2F1354000F1A89 /* index.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.mustache; sourceTree = "<group>"; };
+		112DF5261E2F1354000F1A89 /* pathParam.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pathParam.mustache; sourceTree = "<group>"; };
+		112DF5271E2F1354000F1A89 /* queryParam.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queryParam.mustache; sourceTree = "<group>"; };
+		112DF5281E2F1354000F1A89 /* style.css.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = style.css.mustache; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		012AC43D197E35E400D8649A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012AC444197E35E400D8649A /* Cocoa.framework in Frameworks */,
+				112DF5111E2F12CA000F1A89 /* swagger-codegen-cli.jar in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		012AC437197E35E400D8649A = {
+			isa = PBXGroup;
+			children = (
+				012AC449197E35E400D8649A /* CodeGenerater */,
+				012AC442197E35E400D8649A /* Frameworks */,
+				012AC441197E35E400D8649A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		012AC441197E35E400D8649A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				012AC440197E35E400D8649A /* CodeGenerater.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		012AC442197E35E400D8649A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				012AC443197E35E400D8649A /* Cocoa.framework */,
+				012AC465197E35E400D8649A /* XCTest.framework */,
+				012AC445197E35E400D8649A /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		012AC445197E35E400D8649A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				012AC446197E35E400D8649A /* AppKit.framework */,
+				012AC447197E35E400D8649A /* CoreData.framework */,
+				012AC448197E35E400D8649A /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		012AC449197E35E400D8649A /* CodeGenerater */ = {
+			isa = PBXGroup;
+			children = (
+				012AC45E197E35E400D8649A /* Images.xcassets */,
+				117D4DE11C34B1230088C312 /* shell */,
+				1112FBD21C3130C500F7F0B8 /* UI */,
+				110A853A1CD04B0B0046D29F /* SwaggerGenerator */,
+				012AC44A197E35E400D8649A /* Supporting Files */,
+			);
+			path = CodeGenerater;
+			sourceTree = "<group>";
+		};
+		012AC44A197E35E400D8649A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				012AC44B197E35E400D8649A /* CodeGenerater-Info.plist */,
+				012AC44C197E35E400D8649A /* InfoPlist.strings */,
+				012AC44F197E35E400D8649A /* main.m */,
+				012AC451197E35E400D8649A /* CodeGenerater-Prefix.pch */,
+				012AC452197E35E400D8649A /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		110A853A1CD04B0B0046D29F /* SwaggerGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				110A853B1CD04B200046D29F /* SwaggerGenerator.h */,
+				110A853C1CD04B200046D29F /* SwaggerGenerator.m */,
+			);
+			path = SwaggerGenerator;
+			sourceTree = "<group>";
+		};
+		1112FBD21C3130C500F7F0B8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				012AC4C2197E36A100D8649A /* Document.h */,
+				012AC4C3197E36A100D8649A /* Document.m */,
+				012AC4C4197E36A100D8649A /* Document.xib */,
+				012AC45B197E35E400D8649A /* MainMenu.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		112DF5161E2F1354000F1A89 /* mustache4Api */ = {
+			isa = PBXGroup;
+			children = (
+				112DF5171E2F1354000F1A89 /* api-body.mustache */,
+				112DF5181E2F1354000F1A89 /* api-header.mustache */,
+				112DF51A1E2F1354000F1A89 /* model-body.mustache */,
+				112DF51B1E2F1354000F1A89 /* model-header.mustache */,
+				112DF51C1E2F1354000F1A89 /* podspec.mustache */,
+				112DF51D1E2F1354000F1A89 /* ResponseDeserializer-body.mustache */,
+				112DF51E1E2F1354000F1A89 /* ResponseDeserializer-header.mustache */,
+				112DF51F1E2F1354000F1A89 /* Sanitizer-body.mustache */,
+				112DF5201E2F1354000F1A89 /* Sanitizer-header.mustache */,
+			);
+			path = mustache4Api;
+			sourceTree = "<group>";
+		};
+		112DF5211E2F1354000F1A89 /* mustache4Doc */ = {
+			isa = PBXGroup;
+			children = (
+				112DF5221E2F1354000F1A89 /* bodyParam.mustache */,
+				112DF5231E2F1354000F1A89 /* formParam.mustache */,
+				112DF5241E2F1354000F1A89 /* headerParam.mustache */,
+				112DF5251E2F1354000F1A89 /* index.mustache */,
+				112DF5261E2F1354000F1A89 /* pathParam.mustache */,
+				112DF5271E2F1354000F1A89 /* queryParam.mustache */,
+				112DF5281E2F1354000F1A89 /* style.css.mustache */,
+			);
+			path = mustache4Doc;
+			sourceTree = "<group>";
+		};
+		117D4DE11C34B1230088C312 /* shell */ = {
+			isa = PBXGroup;
+			children = (
+				112DF5161E2F1354000F1A89 /* mustache4Api */,
+				112DF5211E2F1354000F1A89 /* mustache4Doc */,
+				112DF5121E2F1332000F1A89 /* codegen4Api.sh */,
+				112DF5131E2F1332000F1A89 /* codegen4Doc.sh */,
+				112DF4E21E2F12CA000F1A89 /* code.config */,
+				112DF4F81E2F12CA000F1A89 /* spec.json */,
+				112DF4F91E2F12CA000F1A89 /* spec.yaml */,
+				112DF4FA1E2F12CA000F1A89 /* swagger-codegen-cli.jar */,
+			);
+			path = shell;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		012AC43F197E35E400D8649A /* CodeGenerater */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 012AC474197E35E400D8649A /* Build configuration list for PBXNativeTarget "CodeGenerater" */;
+			buildPhases = (
+				012AC43C197E35E400D8649A /* Sources */,
+				012AC43D197E35E400D8649A /* Frameworks */,
+				012AC43E197E35E400D8649A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodeGenerater;
+			productName = CodeGenerater;
+			productReference = 012AC440197E35E400D8649A /* CodeGenerater.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		012AC438197E35E400D8649A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = gaodesoft;
+			};
+			buildConfigurationList = 012AC43B197E35E400D8649A /* Build configuration list for PBXProject "CodeGenerater" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 012AC437197E35E400D8649A;
+			productRefGroup = 012AC441197E35E400D8649A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				012AC43F197E35E400D8649A /* CodeGenerater */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		012AC43E197E35E400D8649A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112DF5291E2F1354000F1A89 /* api-body.mustache in Resources */,
+				112DF5331E2F1354000F1A89 /* bodyParam.mustache in Resources */,
+				112DF50F1E2F12CA000F1A89 /* spec.json in Resources */,
+				112DF52F1E2F1354000F1A89 /* ResponseDeserializer-body.mustache in Resources */,
+				112DF5151E2F1332000F1A89 /* codegen4Doc.sh in Resources */,
+				112DF5351E2F1354000F1A89 /* headerParam.mustache in Resources */,
+				012AC4CD197E36A100D8649A /* Document.xib in Resources */,
+				112DF5371E2F1354000F1A89 /* pathParam.mustache in Resources */,
+				112DF52E1E2F1354000F1A89 /* podspec.mustache in Resources */,
+				112DF5381E2F1354000F1A89 /* queryParam.mustache in Resources */,
+				112DF5141E2F1332000F1A89 /* codegen4Api.sh in Resources */,
+				112DF5101E2F12CA000F1A89 /* spec.yaml in Resources */,
+				112DF5301E2F1354000F1A89 /* ResponseDeserializer-header.mustache in Resources */,
+				112DF5361E2F1354000F1A89 /* index.mustache in Resources */,
+				012AC45F197E35E400D8649A /* Images.xcassets in Resources */,
+				112DF5311E2F1354000F1A89 /* Sanitizer-body.mustache in Resources */,
+				112DF52A1E2F1354000F1A89 /* api-header.mustache in Resources */,
+				012AC44E197E35E400D8649A /* InfoPlist.strings in Resources */,
+				012AC454197E35E400D8649A /* Credits.rtf in Resources */,
+				112DF5321E2F1354000F1A89 /* Sanitizer-header.mustache in Resources */,
+				112DF4FB1E2F12CA000F1A89 /* code.config in Resources */,
+				112DF52D1E2F1354000F1A89 /* model-header.mustache in Resources */,
+				112DF52C1E2F1354000F1A89 /* model-body.mustache in Resources */,
+				112DF5391E2F1354000F1A89 /* style.css.mustache in Resources */,
+				112DF5341E2F1354000F1A89 /* formParam.mustache in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		012AC43C197E35E400D8649A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				110A853D1CD04B200046D29F /* SwaggerGenerator.m in Sources */,
+				012AC450197E35E400D8649A /* main.m in Sources */,
+				012AC4CC197E36A100D8649A /* Document.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		012AC44C197E35E400D8649A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				012AC44D197E35E400D8649A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		012AC452197E35E400D8649A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				012AC453197E35E400D8649A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		012AC45B197E35E400D8649A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				012AC45C197E35E400D8649A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		012AC472197E35E400D8649A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		012AC473197E35E400D8649A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		012AC475197E35E400D8649A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CodeGenerater/CodeGenerater-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"PROJECT_DIR=@\\\"\"$PROJECT_DIR\"\\\"",
+					"PROJECT_NAME=@\\\"\"$PROJECT_NAME\"\\\"",
+				);
+				INFOPLIST_FILE = "CodeGenerater/CodeGenerater-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		012AC476197E35E400D8649A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CodeGenerater/CodeGenerater-Prefix.pch";
+				INFOPLIST_FILE = "CodeGenerater/CodeGenerater-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		012AC43B197E35E400D8649A /* Build configuration list for PBXProject "CodeGenerater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				012AC472197E35E400D8649A /* Debug */,
+				012AC473197E35E400D8649A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		012AC474197E35E400D8649A /* Build configuration list for PBXNativeTarget "CodeGenerater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				012AC475197E35E400D8649A /* Debug */,
+				012AC476197E35E400D8649A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 012AC438197E35E400D8649A /* Project object */;
+}

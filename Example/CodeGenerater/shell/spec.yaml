@@ -1,0 +1,311 @@
+swagger: "2.0"
+
+################################################################################
+#                              API Information                                 #
+################################################################################
+info:
+  version: 1.0.0
+  title: OSChina接口文档
+  contact:
+    name: 陈子明
+    email: chenzm@gaodesoft.com
+
+################################################################################
+#                  Host, Base Path, Schemes ,Content Types, parameters         #
+################################################################################
+host: git.oschina.net
+basePath: /api/v3
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+  - multipart/form-data
+
+securityDefinitions:
+  oauth:
+    type: oauth2
+    flow: implicit
+    authorizationUrl: https://twitter.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
+    scopes:
+      basic: |
+       to read any and all data related to twitter
+security:
+  - oauth:
+    - basic
+
+################################################################################
+#                                  paths                                       #
+################################################################################
+paths:
+
+################################################################################
+#                                 用户登录                                      #
+################################################################################
+  /session:
+    post:
+      description: 登录
+      x-objc-operationId: SignIn
+      x-server: WEB_HOST
+      tags:
+        - Auth
+      security:
+       - oauth:
+         - basic
+      parameters:
+        - name: email
+          description: 邮箱
+          in: formData
+          required: true
+          type: string
+        - name: password
+          description: 密码
+          in: formData
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/User'
+
+################################################################################
+#                                 用户信息                                     #
+################################################################################
+  /users:
+    get:
+      operationId: getUsers
+      description: 获取用户列表
+      x-objc-operationId: GetUserList
+      x-server: WEB_HOST
+      tags:
+        - User
+      parameters:
+        - name: pageNumber
+          description: 页码
+          in: formData
+          required: true
+          type: integer
+        - name: batchSize
+          description: 请求的条数
+          in: formData
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+    post:
+      description: 新建用户
+      x-objc-operationId: CreateUser
+      x-server: WEB_HOST
+      tags:
+        - User
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+    put:
+      description: 修改用户
+      x-objc-operationId: UpdateUser
+      x-server: WEB_HOST
+      tags:
+        - User
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+
+  /users/{user_id}:
+    get:
+      description: 获取用户
+      x-objc-operationId: GetUser
+      x-server: WEB_HOST
+      tags:
+        - User
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+    delete:
+      description: 删除用户
+      x-objc-operationId: DeleteUser
+      x-server: WEB_HOST
+      tags:
+        - User
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+
+  /users/{user_id}/address:
+    post:
+      description: 修改用户联系方式
+      x-objc-operationId:  UpdateReceivingInfo
+      x-server: WEB_HOST
+      tags:
+        - User
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          type: string
+        - name: private_token
+          in: formData
+          required: true
+          type: string
+        - name: name
+          in: formData
+          required: false
+          type: string
+        - name: tel
+          in: formData
+          required: false
+          type: string
+        - name: address
+          in: formData
+          required: false
+          type: string
+        - name: comment
+          in: formData
+          required: false
+          type: string
+      responses:
+        "200":
+          description: Success
+    get:
+      description: 获取用户联系方式
+      x-objc-operationId:  FetchReceivingInfo
+      x-server: WEB_HOST
+      tags:
+        - User
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          type: string
+        - name: private_token
+          in: formData
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: object
+
+  /auth/avatar-upload:
+    post:
+      description: 上传头像
+      x-objc-operationId:  UploadAvatar
+      x-server: WEB_HOST
+      tags:
+        - Upload
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: name
+          in: formData
+          type: file
+          description: 文件内容
+      responses:
+        "200":
+          description: Success
+
+################################################################################
+#                                 Definitions                                  #
+################################################################################
+definitions:
+  User:
+    type: object
+    title: 用户
+    description: 用户
+    properties:
+      id:
+        type: integer
+        description: id
+        format: int64
+      username:
+        type: string
+        description: username
+      name:
+        type: string
+        description: name
+      bio:
+        type: string
+        description: bio
+      weibo:
+        type: string
+        description: weibo
+      blog:
+        type: string
+        description: blog
+      theme_id:
+        type: integer
+        description: theme_id
+        format: int32
+      state:
+        type: string
+        description: state
+      created_at:
+        type: string
+        description: created_at
+      portrait:
+        type: string
+        description: portrait
+      email:
+        type: string
+        description: email
+      private_token:
+        type: string
+        description: private_token
+      is_admin:
+        type: boolean
+        description: is_admin
+      can_create_group:
+        type: boolean
+        description: can_create_group
+      can_create_project:
+        type: boolean
+        description: can_create_project
+      can_create_team:
+        type: boolean
+        description: can_create_team
+      follow:
+        type: object
+        description: follow

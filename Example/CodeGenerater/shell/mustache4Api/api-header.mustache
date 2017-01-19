@@ -1,0 +1,23 @@
+/* AUTO-GENERATED FILE.  DO NOT MODIFY.
+*
+* 该文件自动生成，请不要修改！
+*/
+
+#import <Foundation/Foundation.h>
+#import "{{classPrefix}}ApiObj.h"
+{{#imports}}#import "{{import}}.h"
+{{/imports}}
+
+{{#operations}}
+{{#operation}}
+{{#notes}}
+/* {{{notes}}} */
+{{/notes}}
+@interface {{classPrefix}}ApiObj{{vendorExtensions.x-objc-operationId}}: NSObject <{{classPrefix}}Api>
+{{#allParams}}
+@property(nonatomic) {{dataType}} {{paramName}}; {{#description}}//{{description}}{{/description}}
+{{/allParams}}
+@end
+
+{{/operation}}
+{{/operations}}

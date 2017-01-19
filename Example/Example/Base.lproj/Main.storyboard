@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HEN-rQ-On1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1Yl-Bz-aDh">
+            <objects>
+                <navigationController id="HEN-rQ-On1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NZp-kE-V6K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5m1-01-gYN" kind="relationship" relationship="rootViewController" id="H7l-PQ-Zna"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jgR-Yq-ABc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222" y="-181"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vAn-KN-tDx">
+            <objects>
+                <viewController id="5m1-01-gYN" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4PU-bN-1Fi"/>
+                        <viewControllerLayoutGuide type="bottom" id="d8e-TG-lLp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GYb-Nx-fjo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="712-y4-MYa">
+                                <rect key="frame" x="100" y="134" width="120" height="30"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.65490196079999996" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RsM-Ji-Q1M"/>
+                                </constraints>
+                                <state key="normal" title="登陆">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLoginBtnClick:" destination="5m1-01-gYN" eventType="touchUpInside" id="hD7-EX-QX5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="712-y4-MYa" firstAttribute="leading" secondItem="GYb-Nx-fjo" secondAttribute="leadingMargin" constant="84" id="SxY-hY-TYj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="712-y4-MYa" secondAttribute="trailing" constant="84" id="tYy-mC-dYh"/>
+                            <constraint firstItem="712-y4-MYa" firstAttribute="top" secondItem="4PU-bN-1Fi" secondAttribute="bottom" constant="70" id="uFe-hT-xuO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="E2M-oA-bUU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvZ-oA-RdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="-181"/>
+        </scene>
+    </scenes>
+</document>

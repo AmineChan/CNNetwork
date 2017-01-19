@@ -1,0 +1,528 @@
+swagger: "2.0"
+
+################################################################################
+#                              API Information                                 #
+################################################################################
+info:
+  version: 1.0.0
+  title: OSChina接口文档
+  contact:
+    name: 陈子明
+    email: chenzm@gaodesoft.com
+
+################################################################################
+#                  Host, Base Path, Schemes ,Content Types, parameters         #
+################################################################################
+host: git.oschina.net
+basePath: /api/v3
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+  - multipart/form-data
+
+securityDefinitions:
+  oauth:
+    type: oauth2
+    flow: implicit
+    authorizationUrl: https://twitter.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
+    scopes:
+      basic: |
+       to read any and all data related to twitter
+security:
+  - oauth:
+    - basic
+
+################################################################################
+#                                  paths                                       #
+################################################################################
+paths:
+
+################################################################################
+#                                 用户登录                                      #
+################################################################################
+  /session:
+    post:
+      description: 用户登录接口
+      x-objc-operationId: signIn
+      security:
+       - oauth:
+         - basic
+      parameters:
+        - name: email
+          description: 邮箱
+          in: formData
+          required: true
+          type: string
+        - name: password
+          description: 密码
+          in: formData
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/User'
+
+################################################################################
+#                                 用户信息                                     #
+################################################################################
+  /users:
+    get:
+      operationId: getUsers
+      description: get users
+      tags:
+        - User
+        - Test
+      parameters:
+        - name: pageNumber
+          description: 页码
+          in: formData
+          required: true
+          type: integer
+        - name: batchSize
+          description: 请求的条数
+          in: formData
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+    post:
+      description: create user
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+    put:
+      description: update user
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+
+  /users/{user_id}:
+    get:
+      description: get single user
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+    delete:
+      description: delete user
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+
+  /users/{user_id}/address:
+    post:
+      description: update ReceivingInfo
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          type: string
+        - name: private_token
+          in: formData
+          required: true
+          type: string
+        - name: name
+          in: formData
+          required: false
+          type: string
+        - name: tel
+          in: formData
+          required: false
+          type: string
+        - name: address
+          in: formData
+          required: false
+          type: string
+        - name: comment
+          in: formData
+          required: false
+          type: string
+      responses:
+        "200":
+          description: Success
+    get:
+      description: fetch ReceivingInfo
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          type: string
+        - name: private_token
+          in: formData
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: object
+
+  /auth/avatar-upload:
+    post:
+      description: 上传头像
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: name
+          in: formData
+          type: file
+          description: 文件内容
+      responses:
+        "200":
+          description: Success
+
+################################################################################
+#                                 Definitions                                  #
+################################################################################
+definitions:
+  User:
+    type: object
+    description: 用户
+    properties:
+      id:
+        type: integer
+        description: id
+        format: int64
+      username:
+        type: string
+        description: username
+      name:
+        type: string
+        description: name
+      bio:
+        type: string
+        description: bio
+      weibo:
+        type: string
+        description: weibo
+      blog:
+        type: string
+        description: blog
+      theme_id:
+        type: integer
+        description: theme_id
+        format: int32
+      state:
+        type: string
+        description: state
+      created_at:
+        type: string
+        description: created_at
+      portrait:
+        type: string
+        description: portrait
+      email:
+        type: string
+        description: email
+      private_token:
+        type: string
+        description: private_token
+      is_admin:
+        type: boolean
+        description: is_admin
+      can_create_group:
+        type: boolean
+        description: can_create_group
+      can_create_project:
+        type: boolean
+        description: can_create_project
+      can_create_team:
+        type: boolean
+        description: can_create_team
+      follow:
+        type: object
+        description: follow
+  Pagination:
+    type: object
+    description: 分页
+    properties:
+      totalCount:
+        type: integer
+        description: 总条数
+        format: int32
+      totalPage:
+        type: integer
+        description: 总页数
+        format: int32
+      pageNumber:
+        type: integer
+        description: 当前页数
+        format: int32
+      pageSize:
+        type: integer
+        description: 页大小
+        format: int32
+
+  TourismProduct:
+    type: object
+    description: 旅游产品
+    properties:
+      id:
+        type: string
+        description: 产品标识
+      shopId:
+        type: string
+        description: 商铺标识
+      name:
+        type: string
+        description: 名称
+      desc:
+        type: string
+        description: 描述
+      tags:
+        type: array
+        description: 标签
+        items:
+          type: string
+      status:
+        type: integer
+        description: 状态 0、待发布 1、待审核 2、审核通过 3、审核不通过 4、发布 5、下架
+        format: int32
+      price:
+        type: number
+        description: 市场价格
+      salesPrice:
+        type: number
+        description: 促销价格
+      addr:
+        $ref: '#/definitions/VillageAddr'
+      startDate:
+        type: string
+        description: 开始时间
+        format: date-time
+      endDate:
+        type: string
+        description: 结束时间
+        format: date-time
+      imageList:
+        type: array
+        description: 产品图片列表（id列表，图片url根据文件服务器路径+图片id用固定的规则组装）
+        items:
+          type: string
+          description: 图片id
+      collectCount:
+        type: integer
+        description: 收藏次数
+        format: int32
+      detailUrl:
+        type: string
+        description: 详情页url
+      imageAndTextList:
+        type: array
+        description: 图文说明
+        items:
+          $ref: '#/definitions/TourismProductImageText'
+      items:
+          $ref: '#/definitions/TourismProductItems'
+      needBook:
+        type: boolean
+        description: 是否需要预定
+      preBookTime:
+        type: string
+        description: 预定提前时间
+      nonChange:
+        type: boolean
+        description: true:不可改 false:可改
+      nonRefundable:
+        type: boolean
+        description: true:不可退 false:可退
+      recomment:
+          $ref: '#/definitions/TourismProductRecomment'
+
+  ShopCertification:
+    type: object
+    description: 店铺认证
+    properties:
+      shopId:
+        type: string
+        description: 店铺标识
+      realName:
+        type: string
+        description: 店主真实姓名
+      IDNo:
+        type: string
+        description: 店主身份证号
+      IDImage:
+        type: string
+        description: 店主身份证图片
+      legalPerson:
+        type: string
+        description: 法人代表
+      companyName:
+        type: string
+        description: 企业名称
+      licenseNo:
+        type: string
+        description: 许可证编号
+      licenseImageUrl:
+        type: string
+        description: 执照照片地址，个人营业执照、企业营业执照或导游证照片
+
+  TourismProductRecomment:
+    type: object
+    description: 旅游产品推荐
+    properties:
+      productId:
+        type: string
+        description: 产品标识
+      slogan:
+        type: string
+        description: 推荐宣传语
+      deadline:
+        type: string
+        description: 推荐截止日期
+        format: date-time
+      index:
+        type: integer
+        description: 推荐排序
+        format: int32
+
+  TourismProductImageText:
+    type: object
+    description: 旅游产品图文说明
+    properties:
+      id:
+        type: string
+        description: 标识
+      imageUrl:
+        type: string
+        description: 图片地址
+      desc:
+        type: string
+        description: 图片说明
+      sort:
+        type: integer
+        description: 排序
+        format: int32
+
+  TourismProductItems:
+    type: object
+    description: 旅游产品事项
+    properties:
+      productId:
+        type: string
+        description: 产品标识
+      schedule:
+        type: string
+        description: 行程安排
+      point:
+        type: string
+        description: 产品亮点
+      guide:
+        type: string
+        description: 购买须知
+      feeDesc:
+        type: string
+        description: 费用说明
+      otherDesc:
+        type: string
+        description: 其他说明
+
+  VillageAddr:
+    type: object
+    description: 乡村地址
+    properties:
+      id:
+        type: string
+        description: 标识
+      province:
+        type: string
+        description: 地点-省
+      city:
+        type: string
+        description: 地点-市
+      area:
+        type: string
+        description: 地点-区
+      town:
+        type: string
+        description: 地点-乡/镇
+      village:
+        type: string
+        description: 地点-村
+
+  Comment:
+    type: object
+    description: 评论
+    properties:
+      id:
+        type: string
+        description: 评论标识
+      userId:
+        type: string
+        description: 评论者标识
+      shopId:
+        type: string
+        description: 店铺标识
+      productId:
+        type: string
+        description: 产品标识
+      nickname:
+        type: string
+        description: 评论者昵称
+      avataUrl:
+        type: string
+        description: 评论者头像地址
+      mobile:
+        type: string
+        description: 评论者手机号
+      content:
+        type: string
+        description: 内容
+      score:
+        type: number
+        description: 评分
+        format: int32
+      time:
+        type: string
+        description: 评论时间
+        format: date-time
+      imageUrlList:
+        type: array
+        description: 评论图片
+        items:
+          type: string
