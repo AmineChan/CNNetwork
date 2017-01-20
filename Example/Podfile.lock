@@ -26,18 +26,21 @@ PODS:
 
 DEPENDENCIES:
   - Api (from `Api`)
+  - CNNetwork (from `../CNNetwork.podspec`)
 
 EXTERNAL SOURCES:
   Api:
     :path: Api
+  CNNetwork:
+    :path: ../CNNetwork.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Api: ac2e3db49c5951e988c8e9eec0d7662864a231cc
-  CNNetwork: 6190b05edbc11165347b9d4ce9ecf9a0e59734ab
+  CNNetwork: 86334737550108178ae4304ea5f0573dc6b54f85
   ISO8601: d3ea3ba9b752820cf92c6b47a9ee327e9f0e13fc
   JSONModel: fd2553dc9e6608a3f35bfc956a14be35395d3852
 
-PODFILE CHECKSUM: 4fc7a4c847092db3e046d2cdc7ce975d742e9eb0
+PODFILE CHECKSUM: b152acdc0d7fee640637dc3d85362a9e3c0d56be
 
 COCOAPODS: 1.1.1
