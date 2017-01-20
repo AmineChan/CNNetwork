@@ -33,5 +33,5 @@ Pod::Spec.new do |s|
     s.dependency 'AFNetworking', '~> 3'
     s.dependency 'JSONModel', '~> 1.2'
     s.dependency 'ISO8601', '~> 0.5'
+    s.dependency 'CNNetwork'
 end
-

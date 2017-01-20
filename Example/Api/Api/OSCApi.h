@@ -5,8 +5,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CNNetwork/CNNetwork.h>
-#import "AHRequestParamSerializer.h"
-#import "AHResponseDeserializer.h"
+#import "OSCRequestParamSerializer.h"
+#import "OSCResponseDeserializer.h"
 #import "OSCAuthApi.h"
 #import "OSCUploadApi.h"
 #import "OSCUserApi.h"

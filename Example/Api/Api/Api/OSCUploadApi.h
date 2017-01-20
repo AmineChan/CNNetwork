@@ -7,7 +7,7 @@
 #import "OSCApiObj.h"
 
 /* 上传头像 */
-@interface OSCApiObjUploadAvatar: NSObject <OSCApi>
+@interface OSCApiObjUploadAvatar: OSCApiObj
 @property(nonatomic) NSURL* name; //文件内容
 @end
 

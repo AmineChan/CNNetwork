@@ -30,6 +30,6 @@ typedef enum
 
 @interface {{classPrefix}}ApiObj: NSObject <{{classPrefix}}Api>
 
-- (void)startWithCompletionBlock:(CNBatchRequestCompleteBlock)completionBlock;
+- (void)startWithCompletionBlock:(void (^)(CNRequest *request, id data, NSError *error))completionBlock;
 
 @end

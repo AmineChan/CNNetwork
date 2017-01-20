@@ -4,7 +4,7 @@
 */
 
 #import <Foundation/Foundation.h>
-#import "CNNetwork.h"
+#import <CNNetwork/CNNetwork.h>
 
 /**
  * A key for deserialization ErrorDomain

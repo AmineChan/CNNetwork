@@ -8,7 +8,7 @@
 #import "OSCUser.h"
 
 /* 登录 */
-@interface OSCApiObjSignIn: NSObject <OSCApi>
+@interface OSCApiObjSignIn: OSCApiObj
 @property(nonatomic) NSString* email; //邮箱
 @property(nonatomic) NSString* password; //密码
 @end

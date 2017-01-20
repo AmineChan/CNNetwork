@@ -1,10 +1,13 @@
+source 'https://github.com/AmineChan/specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios ,'8.0'
 use_frameworks!
 
 target "Example" do
 
-pod 'Api', :path => './Api'
-pod 'CNNetwork', :path => '../CNNetwork.podspec'
+pod 'Api', :path => 'Api'
+#pod 'CNNetwork', :path => '../CNNetwork.podspec'
 #pod 'AFNetworking'
 #pod 'JSONKit-NoWarning', '~> 1.2'
 #pod 'jastor', '~> 0.2.1'

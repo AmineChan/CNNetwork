@@ -13,7 +13,7 @@
 {{#notes}}
 /* {{{notes}}} */
 {{/notes}}
-@interface {{classPrefix}}ApiObj{{vendorExtensions.x-objc-operationId}}: NSObject <{{classPrefix}}Api>
+@interface {{classPrefix}}ApiObj{{vendorExtensions.x-objc-operationId}}: {{classPrefix}}ApiObj
 {{#allParams}}
 @property(nonatomic) {{dataType}} {{paramName}}; {{#description}}//{{description}}{{/description}}
 {{/allParams}}

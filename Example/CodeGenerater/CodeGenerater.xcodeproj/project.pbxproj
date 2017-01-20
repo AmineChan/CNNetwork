@@ -37,6 +37,9 @@
 		112DF5371E2F1354000F1A89 /* pathParam.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5261E2F1354000F1A89 /* pathParam.mustache */; };
 		112DF5381E2F1354000F1A89 /* queryParam.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5271E2F1354000F1A89 /* queryParam.mustache */; };
 		112DF5391E2F1354000F1A89 /* style.css.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF5281E2F1354000F1A89 /* style.css.mustache */; };
+		112DF9161E319066000F1A89 /* api-include.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF9131E319066000F1A89 /* api-include.mustache */; };
+		112DF9171E319066000F1A89 /* apiobj-body.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF9141E319066000F1A89 /* apiobj-body.mustache */; };
+		112DF9181E319066000F1A89 /* apiobj-header.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 112DF9151E319066000F1A89 /* apiobj-header.mustache */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,9 @@
 		112DF5261E2F1354000F1A89 /* pathParam.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pathParam.mustache; sourceTree = "<group>"; };
 		112DF5271E2F1354000F1A89 /* queryParam.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queryParam.mustache; sourceTree = "<group>"; };
 		112DF5281E2F1354000F1A89 /* style.css.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = style.css.mustache; sourceTree = "<group>"; };
+		112DF9131E319066000F1A89 /* api-include.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "api-include.mustache"; sourceTree = "<group>"; };
+		112DF9141E319066000F1A89 /* apiobj-body.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apiobj-body.mustache"; sourceTree = "<group>"; };
+		112DF9151E319066000F1A89 /* apiobj-header.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apiobj-header.mustache"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,9 @@
 		112DF5161E2F1354000F1A89 /* mustache4Api */ = {
 			isa = PBXGroup;
 			children = (
+				112DF9131E319066000F1A89 /* api-include.mustache */,
+				112DF9141E319066000F1A89 /* apiobj-body.mustache */,
+				112DF9151E319066000F1A89 /* apiobj-header.mustache */,
 				112DF5171E2F1354000F1A89 /* api-body.mustache */,
 				112DF5181E2F1354000F1A89 /* api-header.mustache */,
 				112DF51A1E2F1354000F1A89 /* model-body.mustache */,
@@ -279,12 +288,14 @@
 				112DF52F1E2F1354000F1A89 /* ResponseDeserializer-body.mustache in Resources */,
 				112DF5151E2F1332000F1A89 /* codegen4Doc.sh in Resources */,
 				112DF5351E2F1354000F1A89 /* headerParam.mustache in Resources */,
+				112DF9171E319066000F1A89 /* apiobj-body.mustache in Resources */,
 				012AC4CD197E36A100D8649A /* Document.xib in Resources */,
 				112DF5371E2F1354000F1A89 /* pathParam.mustache in Resources */,
 				112DF52E1E2F1354000F1A89 /* podspec.mustache in Resources */,
 				112DF5381E2F1354000F1A89 /* queryParam.mustache in Resources */,
 				112DF5141E2F1332000F1A89 /* codegen4Api.sh in Resources */,
 				112DF5101E2F12CA000F1A89 /* spec.yaml in Resources */,
+				112DF9181E319066000F1A89 /* apiobj-header.mustache in Resources */,
 				112DF5301E2F1354000F1A89 /* ResponseDeserializer-header.mustache in Resources */,
 				112DF5361E2F1354000F1A89 /* index.mustache in Resources */,
 				012AC45F197E35E400D8649A /* Images.xcassets in Resources */,
@@ -298,6 +309,7 @@
 				112DF52C1E2F1354000F1A89 /* model-body.mustache in Resources */,
 				112DF5391E2F1354000F1A89 /* style.css.mustache in Resources */,
 				112DF5341E2F1354000F1A89 /* formParam.mustache in Resources */,
+				112DF9161E319066000F1A89 /* api-include.mustache in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

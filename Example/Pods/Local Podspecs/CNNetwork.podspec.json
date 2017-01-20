@@ -8,15 +8,15 @@
     "czm": "328525910@qq.com"
   },
   "source": {
-    "svn": "https://192.168.1.103/svn/ecoalstore/trunk/ios/CNNetwork2.0",
-    "tag": "2.0.0"
+    "git": "https://github.com/AmineChan/CNNetwork.git",
+    "tag": "0.0.1"
   },
   "source_files": [
     "CNNetwork/*.{h,m}",
     "CNNetwork/**/*.{h,m}"
   ],
   "platforms": {
-    "ios": "6.0"
+    "ios": "7.0"
   },
   "requires_arc": true,
   "dependencies": {

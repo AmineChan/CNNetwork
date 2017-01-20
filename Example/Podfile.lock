@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - Api (1.0.0):
     - AFNetworking (~> 3)
+    - CNNetwork
     - ISO8601 (~> 0.5)
     - JSONModel (~> 1.2)
   - CNNetwork (0.0.1):
@@ -24,22 +25,19 @@ PODS:
   - JSONModel (1.5.1)
 
 DEPENDENCIES:
-  - Api (from `./Api`)
-  - CNNetwork (from `../CNNetwork.podspec`)
+  - Api (from `Api`)
 
 EXTERNAL SOURCES:
   Api:
-    :path: ./Api
-  CNNetwork:
-    :path: ../CNNetwork.podspec
+    :path: Api
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Api: 083e1986f97750b721a7c5a5e91e3f39b65aeb96
-  CNNetwork: 6295b0a9835cf58e09020d41b9a88efae9527bdb
+  Api: ac2e3db49c5951e988c8e9eec0d7662864a231cc
+  CNNetwork: 6190b05edbc11165347b9d4ce9ecf9a0e59734ab
   ISO8601: d3ea3ba9b752820cf92c6b47a9ee327e9f0e13fc
   JSONModel: fd2553dc9e6608a3f35bfc956a14be35395d3852
 
-PODFILE CHECKSUM: 5b0c0b2932a77c7676f07f546696772f3bb48e1b
+PODFILE CHECKSUM: 4fc7a4c847092db3e046d2cdc7ce975d742e9eb0
 
 COCOAPODS: 1.1.1

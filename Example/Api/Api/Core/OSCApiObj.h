@@ -30,6 +30,6 @@ typedef enum
 
 @interface OSCApiObj: NSObject <OSCApi>
 
-- (void)startWithCompletionBlock:(CNBatchRequestCompleteBlock)completionBlock;
+- (void)startWithCompletionBlock:(void (^)(CNRequest *request, id data, NSError *error))completionBlock;
 
 @end

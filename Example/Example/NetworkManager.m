@@ -7,7 +7,6 @@
 //
 
 #import "NetworkManager.h"
-#import "JSONKit.h"
 #import "CNNetwork.h"
 #import <Api/OSCRequestParamSerializer.h>
 #import <Api/OSCResponseDeserializer.h>

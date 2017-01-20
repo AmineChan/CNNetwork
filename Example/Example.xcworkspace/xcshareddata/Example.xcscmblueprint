@@ -4,18 +4,18 @@
     "fbf7c5fc-741e-864f-b003-8970bdfe061d++3278" : {
 
     },
-    "fbf7c5fc-741e-864f-b003-8970bdfe061d++1869" : {
+    "7673BEA50BB8956AF118382955DF1238FFC0FC38" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "fbf7c5fc-741e-864f-b003-8970bdfe061d++3278" : 0,
-    "fbf7c5fc-741e-864f-b003-8970bdfe061d++1869" : 0
+    "7673BEA50BB8956AF118382955DF1238FFC0FC38" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "26DF732C-3503-4069-8B3A-0356195D0146",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "fbf7c5fc-741e-864f-b003-8970bdfe061d++3278" : "CNNetwork2.0\/",
-    "fbf7c5fc-741e-864f-b003-8970bdfe061d++1869" : "CNNetwork\/"
+    "7673BEA50BB8956AF118382955DF1238FFC0FC38" : "CNNetwork\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Example",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -24,7 +24,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.103\/svn\/ecoalstore",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "fbf7c5fc-741e-864f-b003-8970bdfe061d++1869"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7673BEA50BB8956AF118382955DF1238FFC0FC38"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.103\/svn\/ecoalstore",

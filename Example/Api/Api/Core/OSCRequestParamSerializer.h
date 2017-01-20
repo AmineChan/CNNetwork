@@ -4,7 +4,7 @@
 */
 
 #import <Foundation/Foundation.h>
-#import "CNNetwork.h"
+#import <CNNetwork/CNNetwork.h>
 
 @interface OSCRequestParamSerializer : NSObject <CNNetworkRequestParamSerializer>
 @end
