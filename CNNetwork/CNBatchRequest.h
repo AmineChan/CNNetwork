@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "CNRequest.h"
 
-typedef void (^CNBatchRequestCompleteBlock)(NSError *error);
-
 NS_ASSUME_NONNULL_BEGIN
+
+typedef void (^CNBatchRequestCompleteBlock)( NSError * _Nullable error);
 
 @interface CNBatchRequest : NSObject
 
