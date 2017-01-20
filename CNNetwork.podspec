@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CNNetwork"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "CNNetwork."
   s.homepage     = "http://www.gaodesoft.com"
   s.license      = "MIT"
