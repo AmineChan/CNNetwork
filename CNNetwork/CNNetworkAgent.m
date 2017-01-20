@@ -13,7 +13,7 @@
 @interface CNNetworkAgent()
 
 @property (nonatomic, strong) NSMutableArray<NSURLSessionDataTask *> *cachedDataTasks;
-@property (nonatomic, strong) NSMutableDictionary<NSString *, CNRequest *> *mutableRequestByTaskIdentifier;
+@property (nonatomic, strong) NSMutableDictionary<NSNumber *, CNRequest *> *mutableRequestByTaskIdentifier;
 @property (nonatomic, strong) NSLock *lock;
 
 @property (nonatomic, strong) NSDate *lastSessionTime;
@@ -212,7 +212,7 @@
     if (serverConfig.sslCaCert)
     {
         NSData *certData = [NSData dataWithContentsOfFile:serverConfig.sslCaCert];
-        [securityPolicy setPinnedCertificates:@[certData]];
+        [securityPolicy setPinnedCertificates:[NSSet setWithObject:certData]];
     }
     
     if (serverConfig.verifySSL)

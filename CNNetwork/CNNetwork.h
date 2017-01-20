@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef CNNetwork_h
-#define CNNetwork_h
+#ifndef __CNNetwork_h__
+#define __CNNetwork_h__
 
 #import "AFHTTPSessionManager+CNNetwork.h"
 #import "CNNetworkServer.h"
