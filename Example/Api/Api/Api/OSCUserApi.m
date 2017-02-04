@@ -38,18 +38,18 @@
     NSArray *authSettings = @[@"oauth"];
 
     return [[CNRequest alloc] initWithTag:API_TAG_GetUserList
-                                HTTPMethod:@"GET"
-                              relativePath:@"/users"
-                                 serverKey:@"WEB_HOST"
-                              headerParams:headerParams
-                                pathParams:pathParams
-                               queryParams:queryParams
-                                formParams:formParams
-                                 bodyParam:bodyParam
-                        requestContentType:requestContentType
-                       responseContentType:responseContentType
-                              responseType:@"NSArray<OSCUser>*"
-                              authSettings:authSettings];
+                               HTTPMethod:@"GET"
+                             relativePath:@"/users"
+                                serverKey:@"WEB_HOST"
+                             headerParams:headerParams
+                               pathParams:pathParams
+                              queryParams:queryParams
+                               formParams:formParams
+                                bodyParam:bodyParam
+                       requestContentType:requestContentType
+                      responseContentType:responseContentType
+                             responseType:@"NSArray<OSCUser>*"
+                                authNames:authSettings];
 }
 
 @end
@@ -81,18 +81,18 @@
     NSArray *authSettings = @[@"oauth"];
 
     return [[CNRequest alloc] initWithTag:API_TAG_CreateUser
-                                HTTPMethod:@"POST"
-                              relativePath:@"/users"
-                                 serverKey:@"WEB_HOST"
-                              headerParams:headerParams
-                                pathParams:pathParams
-                               queryParams:queryParams
-                                formParams:formParams
-                                 bodyParam:bodyParam
-                        requestContentType:requestContentType
-                       responseContentType:responseContentType
-                              responseType:@"NSArray<OSCUser>*"
-                              authSettings:authSettings];
+                               HTTPMethod:@"POST"
+                             relativePath:@"/users"
+                                serverKey:@"WEB_HOST"
+                             headerParams:headerParams
+                               pathParams:pathParams
+                              queryParams:queryParams
+                               formParams:formParams
+                                bodyParam:bodyParam
+                       requestContentType:requestContentType
+                      responseContentType:responseContentType
+                             responseType:@"NSArray<OSCUser>*"
+                                authNames:authSettings];
 }
 
 @end
@@ -124,18 +124,18 @@
     NSArray *authSettings = @[@"oauth"];
 
     return [[CNRequest alloc] initWithTag:API_TAG_UpdateUser
-                                HTTPMethod:@"PUT"
-                              relativePath:@"/users"
-                                 serverKey:@"WEB_HOST"
-                              headerParams:headerParams
-                                pathParams:pathParams
-                               queryParams:queryParams
-                                formParams:formParams
-                                 bodyParam:bodyParam
-                        requestContentType:requestContentType
-                       responseContentType:responseContentType
-                              responseType:@"NSArray<OSCUser>*"
-                              authSettings:authSettings];
+                               HTTPMethod:@"PUT"
+                             relativePath:@"/users"
+                                serverKey:@"WEB_HOST"
+                             headerParams:headerParams
+                               pathParams:pathParams
+                              queryParams:queryParams
+                               formParams:formParams
+                                bodyParam:bodyParam
+                       requestContentType:requestContentType
+                      responseContentType:responseContentType
+                             responseType:@"NSArray<OSCUser>*"
+                                authNames:authSettings];
 }
 
 @end
@@ -173,18 +173,18 @@
     NSArray *authSettings = @[@"oauth"];
 
     return [[CNRequest alloc] initWithTag:API_TAG_FetchReceivingInfo
-                                HTTPMethod:@"GET"
-                              relativePath:@"/users/{user_id}/address"
-                                 serverKey:@"WEB_HOST"
-                              headerParams:headerParams
-                                pathParams:pathParams
-                               queryParams:queryParams
-                                formParams:formParams
-                                 bodyParam:bodyParam
-                        requestContentType:requestContentType
-                       responseContentType:responseContentType
-                              responseType:@"NSObject*"
-                              authSettings:authSettings];
+                               HTTPMethod:@"GET"
+                             relativePath:@"/users/{user_id}/address"
+                                serverKey:@"WEB_HOST"
+                             headerParams:headerParams
+                               pathParams:pathParams
+                              queryParams:queryParams
+                               formParams:formParams
+                                bodyParam:bodyParam
+                       requestContentType:requestContentType
+                      responseContentType:responseContentType
+                             responseType:@"NSObject*"
+                                authNames:authSettings];
 }
 
 @end
@@ -234,18 +234,18 @@
     NSArray *authSettings = @[@"oauth"];
 
     return [[CNRequest alloc] initWithTag:API_TAG_UpdateReceivingInfo
-                                HTTPMethod:@"POST"
-                              relativePath:@"/users/{user_id}/address"
-                                 serverKey:@"WEB_HOST"
-                              headerParams:headerParams
-                                pathParams:pathParams
-                               queryParams:queryParams
-                                formParams:formParams
-                                 bodyParam:bodyParam
-                        requestContentType:requestContentType
-                       responseContentType:responseContentType
-                              responseType:nil
-                              authSettings:authSettings];
+                               HTTPMethod:@"POST"
+                             relativePath:@"/users/{user_id}/address"
+                                serverKey:@"WEB_HOST"
+                             headerParams:headerParams
+                               pathParams:pathParams
+                              queryParams:queryParams
+                               formParams:formParams
+                                bodyParam:bodyParam
+                       requestContentType:requestContentType
+                      responseContentType:responseContentType
+                             responseType:nil
+                                authNames:authSettings];
 }
 
 @end
@@ -279,18 +279,18 @@
     NSArray *authSettings = @[@"oauth"];
 
     return [[CNRequest alloc] initWithTag:API_TAG_DeleteUser
-                                HTTPMethod:@"DELETE"
-                              relativePath:@"/users/{user_id}"
-                                 serverKey:@"WEB_HOST"
-                              headerParams:headerParams
-                                pathParams:pathParams
-                               queryParams:queryParams
-                                formParams:formParams
-                                 bodyParam:bodyParam
-                        requestContentType:requestContentType
-                       responseContentType:responseContentType
-                              responseType:nil
-                              authSettings:authSettings];
+                               HTTPMethod:@"DELETE"
+                             relativePath:@"/users/{user_id}"
+                                serverKey:@"WEB_HOST"
+                             headerParams:headerParams
+                               pathParams:pathParams
+                              queryParams:queryParams
+                               formParams:formParams
+                                bodyParam:bodyParam
+                       requestContentType:requestContentType
+                      responseContentType:responseContentType
+                             responseType:nil
+                                authNames:authSettings];
 }
 
 @end
@@ -324,18 +324,18 @@
     NSArray *authSettings = @[@"oauth"];
 
     return [[CNRequest alloc] initWithTag:API_TAG_GetUser
-                                HTTPMethod:@"GET"
-                              relativePath:@"/users/{user_id}"
-                                 serverKey:@"WEB_HOST"
-                              headerParams:headerParams
-                                pathParams:pathParams
-                               queryParams:queryParams
-                                formParams:formParams
-                                 bodyParam:bodyParam
-                        requestContentType:requestContentType
-                       responseContentType:responseContentType
-                              responseType:@"NSArray<OSCUser>*"
-                              authSettings:authSettings];
+                               HTTPMethod:@"GET"
+                             relativePath:@"/users/{user_id}"
+                                serverKey:@"WEB_HOST"
+                             headerParams:headerParams
+                               pathParams:pathParams
+                              queryParams:queryParams
+                               formParams:formParams
+                                bodyParam:bodyParam
+                       requestContentType:requestContentType
+                      responseContentType:responseContentType
+                             responseType:@"NSArray<OSCUser>*"
+                                authNames:authSettings];
 }
 
 @end

@@ -9,11 +9,16 @@
 #import "CNNetworkServerConfig.h"
 #import <UIKit/UIKit.h>
 
+static NSString *const kAuthTypeBasic = @"basic";
+static NSString *const kAuthTypeApiKey = @"apiKey";
+static NSString *const kAuthTypeOauth2 = @"oauth2";
+
 @interface CNNetworkServerConfig ()
 
-@property (nonatomic, strong)NSMutableDictionary *mutableDefaultHeaders;
-@property (nonatomic, strong)NSMutableDictionary *mutableApiKey;
-@property (nonatomic, strong)NSMutableDictionary *mutableApiKeyPrefix;
+@property (nonatomic, strong) NSMutableDictionary *mutableDefaultHeaders;
+@property (nonatomic, strong) NSMutableDictionary *mutableApiKey;
+@property (nonatomic, strong) NSMutableDictionary *mutableApiKeyPrefix;
+@property (nonatomic, strong) NSMutableDictionary *mutableAuthSettings;
 
 @end
 
@@ -121,6 +126,47 @@
 }
 
 #pragma mark -
+- (void)setBasicAuthWithName:(NSString *)name
+{
+    [self setAuthSetting:@{@"type": kAuthTypeBasic,
+                           @"in": @"header",
+                           @"key": @"Authorization"
+                           }
+                withName:name];
+}
+
+- (void)setOAuth2AuthWithName:(NSString *)name
+{
+    [self setAuthSetting:@{@"type": kAuthTypeOauth2,
+                           @"in": @"header",
+                           @"key": @"Authorization"
+                           }
+                withName:name];
+}
+
+- (void)setApiKeyAuthWithName:(NSString *)name keyName:(NSString *)keyName isInHeader:(BOOL)isInHeader
+{
+    [self setAuthSetting:@{@"type": kAuthTypeApiKey,
+                           @"in": isInHeader? @"header":@"query",
+                           @"key": keyName
+                           }
+                withName:name];
+}
+
+- (void)setAuthSetting:(NSDictionary *)authSetting withName:(NSString *)name
+{
+    if (!authSetting || !name)
+    {
+        return;
+    }
+    
+    if (!self.mutableAuthSettings)
+    {
+        self.mutableAuthSettings = [NSMutableDictionary dictionary];
+    }
+    
+    self.mutableAuthSettings[name] = authSetting;
+}
 
 - (void)setDefaultHeaderValue:(NSString *)value forKey:(NSString *)key
 {
@@ -146,6 +192,62 @@
 - (NSDictionary *)defaultHeaders
 {
     return [self.mutableDefaultHeaders copy];
+}
+
+- (void)updateHeaderParams:(NSDictionary *__autoreleasing *)headers
+               queryParams:(NSDictionary *__autoreleasing *)querys
+             withAuthNames:(NSArray *)authNames
+{
+    if (!authNames || authNames.count == 0)
+    {
+        return;
+    }
+    
+    if (!self.mutableAuthSettings)
+    {
+        return;
+    }
+    
+    NSMutableDictionary *headersWithAuth = [NSMutableDictionary dictionaryWithDictionary:*headers];
+    NSMutableDictionary *querysWithAuth = [NSMutableDictionary dictionaryWithDictionary:*querys];
+    
+    for (NSString *authName in authNames)
+    {
+        NSDictionary *authSetting = self.mutableAuthSettings[authName];
+        if(!authSetting)
+        { // auth setting is set only if the key is non-empty
+            continue;
+        }
+        
+        NSString *type = authSetting[@"type"];
+        NSString *location = authSetting[@"in"];
+        NSString *key = authSetting[@"key"];
+        NSString *value = nil;
+        if ([type isEqualToString:kAuthTypeBasic])
+        {
+            value = [self getBasicAuthToken];
+        }
+        else if ([type isEqualToString:kAuthTypeOauth2])
+        {
+            value = [self getAccessToken];
+        }
+        else if ([type isEqualToString:kAuthTypeApiKey])
+        {
+            value = [self getApiKeyWithPrefix:key];
+        }
+
+        if ([location isEqualToString:@"header"] && [key length] > 0 )
+        {
+            headersWithAuth[key] = value;
+        }
+        else if ([location isEqualToString:@"query"] && [key length] != 0)
+        {
+            querysWithAuth[key] = value;
+        }
+    }
+    
+    *headers = [NSDictionary dictionaryWithDictionary:headersWithAuth];
+    *querys = [NSDictionary dictionaryWithDictionary:querysWithAuth];
 }
 
 @end

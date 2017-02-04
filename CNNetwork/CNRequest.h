@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable) NSString *requestContentType;
 @property (nonatomic, nullable) NSString *responseContentType;
 @property (nonatomic, nullable) NSString *responseType;
-@property (nonatomic, nullable) NSArray *authSettings;//security
+@property (nonatomic, nullable) NSArray *authNames;//security
 
 @property (nonatomic, nullable) NSDictionary *headerParams;
 @property (nonatomic, nullable) NSDictionary *pathParams;
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
          requestContentType:(nullable NSString *)requestContentType
         responseContentType:(nullable NSString *)responseContentType
                responseType:(nullable NSString *)responseType
-               authSettings:(nullable NSArray *)authSettings;
+                  authNames:(nullable NSArray *)authNames;
 
 - (void)startWithCompletionBlock:(nullable void (^)(CNRequest *request, id data, NSError *error))completionBlock;
 

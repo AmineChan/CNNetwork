@@ -38,18 +38,18 @@
     NSArray *authSettings = @[@"oauth"];
 
     return [[CNRequest alloc] initWithTag:API_TAG_SignIn
-                                HTTPMethod:@"POST"
-                              relativePath:@"/session"
-                                 serverKey:@"WEB_HOST"
-                              headerParams:headerParams
-                                pathParams:pathParams
-                               queryParams:queryParams
-                                formParams:formParams
-                                 bodyParam:bodyParam
-                        requestContentType:requestContentType
-                       responseContentType:responseContentType
-                              responseType:@"OSCUser*"
-                              authSettings:authSettings];
+                               HTTPMethod:@"POST"
+                             relativePath:@"/session"
+                                serverKey:@"WEB_HOST"
+                             headerParams:headerParams
+                               pathParams:pathParams
+                              queryParams:queryParams
+                               formParams:formParams
+                                bodyParam:bodyParam
+                       requestContentType:requestContentType
+                      responseContentType:responseContentType
+                             responseType:@"OSCUser*"
+                                authNames:authSettings];
 }
 
 @end

@@ -81,53 +81,6 @@
     [_lock unlock];
 }
 
-/**
- * Update header and query params based on authentication settings
- */
-- (void)updateHeaderParams:(NSDictionary *__autoreleasing *)headers
-               queryParams:(NSDictionary *__autoreleasing *)querys
-          WithAuthSettings:(NSArray *)authSettings
-              serverConfig:(CNNetworkServerConfig *)serverConfig
-{
-    if (authSettings.count == 0)
-    {
-        return;
-    }
-    
-    NSDictionary *configurationAuthSettings = serverConfig.authSettings;
-    if (!configurationAuthSettings)
-    {
-        return;
-    }
-    
-    NSMutableDictionary *headersWithAuth = [NSMutableDictionary dictionaryWithDictionary:*headers];
-    NSMutableDictionary *querysWithAuth = [NSMutableDictionary dictionaryWithDictionary:*querys];
-    
-    for (NSString *auth in authSettings)
-    {
-        NSDictionary *authSetting = configurationAuthSettings[auth];
-        if(!authSetting)
-        { // auth setting is set only if the key is non-empty
-            continue;
-        }
-        
-        NSString *type = authSetting[@"in"];
-        NSString *key = authSetting[@"key"];
-        NSString *value = authSetting[@"value"];
-        if ([type isEqualToString:@"header"] && [key length] > 0 )
-        {
-            headersWithAuth[key] = value;
-        }
-        else if ([type isEqualToString:@"query"] && [key length] != 0)
-        {
-            querysWithAuth[key] = value;
-        }
-    }
-    
-    *headers = [NSDictionary dictionaryWithDictionary:headersWithAuth];
-    *querys = [NSDictionary dictionaryWithDictionary:querysWithAuth];
-}
-
 - (NSString *)pathWithQueryParamsToString:(NSString *)path queryParams:(NSDictionary *)queryParams
 {
     if(queryParams.count == 0)
@@ -144,7 +97,7 @@
                                       @"pipes": @"|"
                                       };
     
-    for (NSString * key in [queryParams keyEnumerator])
+    for (NSString *key in [queryParams keyEnumerator])
     {
         if (counter == 0)
         {
@@ -169,9 +122,9 @@
         }
         else if ([queryParam isKindOfClass:[CNQueryParamCollection class]])
         {
-            CNQueryParamCollection * coll = (CNQueryParamCollection*) queryParam;
-            NSArray* values = [coll values];
-            NSString* format = [coll format];
+            CNQueryParamCollection *coll = (CNQueryParamCollection*) queryParam;
+            NSArray *values = [coll values];
+            NSString *format = [coll format];
             
             if([format isEqualToString:@"multi"])
             {
@@ -182,7 +135,7 @@
                         separator = @"&";
                     }
                     
-                    NSString * safeValue = CNPercentEscapedStringFromString([NSString stringWithFormat:@"%@",obj]);
+                    NSString *safeValue = CNPercentEscapedStringFromString([NSString stringWithFormat:@"%@",obj]);
                     [requestUrl appendString:[NSString stringWithFormat:@"%@%@=%@", separator, safeKey, safeValue]];
                     counter += 1;
                 }
@@ -190,13 +143,13 @@
                 continue;
             }
             
-            NSString * separatorStyle = separatorStyles[format];
-            NSString * safeValue = CNPercentEscapedStringFromString([values componentsJoinedByString:separatorStyle]);
+            NSString *separatorStyle = separatorStyles[format];
+            NSString *safeValue = CNPercentEscapedStringFromString([values componentsJoinedByString:separatorStyle]);
             [requestUrl appendString:[NSString stringWithFormat:@"%@%@=%@", separator, safeKey, safeValue]];
         }
         else
         {
-            NSString * safeValue = CNPercentEscapedStringFromString([NSString stringWithFormat:@"%@",queryParam]);
+            NSString *safeValue = CNPercentEscapedStringFromString([NSString stringWithFormat:@"%@",queryParam]);
             [requestUrl appendString:[NSString stringWithFormat:@"%@%@=%@", separator, safeKey, safeValue]];
         }
         
@@ -296,11 +249,11 @@
         }
         
         // auth setting
-        [self updateHeaderParams:&headerParams queryParams:&queryParams WithAuthSettings:request.authSettings serverConfig:serverConfig];
+        [serverConfig updateHeaderParams:&headerParams queryParams:&queryParams withAuthNames:request.authNames];
         
         NSMutableString *resourcePath = [NSMutableString stringWithString:request.relativePath];
         [pathParams enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            NSString * safeString = ([obj isKindOfClass:[NSString class]]) ? obj : [NSString stringWithFormat:@"%@", obj];
+            NSString *safeString = ([obj isKindOfClass:[NSString class]]) ? obj : [NSString stringWithFormat:@"%@", obj];
             safeString = CNPercentEscapedStringFromString(safeString);
             [resourcePath replaceCharactersInRange:[resourcePath rangeOfString:[NSString stringWithFormat:@"{%@}", key]] withString:safeString];
         }];

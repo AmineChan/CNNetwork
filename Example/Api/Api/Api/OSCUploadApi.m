@@ -30,18 +30,18 @@
     NSArray *authSettings = @[@"oauth"];
 
     return [[CNRequest alloc] initWithTag:API_TAG_UploadAvatar
-                                HTTPMethod:@"POST"
-                              relativePath:@"/auth/avatar-upload"
-                                 serverKey:@"WEB_HOST"
-                              headerParams:headerParams
-                                pathParams:pathParams
-                               queryParams:queryParams
-                                formParams:formParams
-                                 bodyParam:bodyParam
-                        requestContentType:requestContentType
-                       responseContentType:responseContentType
-                              responseType:nil
-                              authSettings:authSettings];
+                               HTTPMethod:@"POST"
+                             relativePath:@"/auth/avatar-upload"
+                                serverKey:@"WEB_HOST"
+                             headerParams:headerParams
+                               pathParams:pathParams
+                              queryParams:queryParams
+                               formParams:formParams
+                                bodyParam:bodyParam
+                       requestContentType:requestContentType
+                      responseContentType:responseContentType
+                             responseType:nil
+                                authNames:authSettings];
 }
 
 @end

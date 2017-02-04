@@ -69,18 +69,18 @@
     {{/hasAuthMethods}}
 
     return [[CNRequest alloc] initWithTag:API_TAG_{{vendorExtensions.x-objc-operationId}}
-                                HTTPMethod:@"{{httpMethod}}"
-                              relativePath:@"{{path}}"
-                                 serverKey:{{^vendorExtensions.x-server}}@"WEB"{{/vendorExtensions.x-server}}{{#vendorExtensions.x-server}}@"{{vendorExtensions.x-server}}"{{/vendorExtensions.x-server}}
-                              headerParams:headerParams
-                                pathParams:pathParams
-                               queryParams:queryParams
-                                formParams:formParams
-                                 bodyParam:bodyParam
-                        requestContentType:requestContentType
-                       responseContentType:responseContentType
-                              responseType:{{^returnType}}nil{{/returnType}}{{#returnType}}@"{{{ returnType }}}"{{/returnType}}
-                              authSettings:{{#hasAuthMethods}}authSettings{{/hasAuthMethods}}{{^hasAuthMethods}}nil{{/hasAuthMethods}}];
+                               HTTPMethod:@"{{httpMethod}}"
+                             relativePath:@"{{path}}"
+                                serverKey:{{^vendorExtensions.x-server}}@"WEB"{{/vendorExtensions.x-server}}{{#vendorExtensions.x-server}}@"{{vendorExtensions.x-server}}"{{/vendorExtensions.x-server}}
+                             headerParams:headerParams
+                               pathParams:pathParams
+                              queryParams:queryParams
+                               formParams:formParams
+                                bodyParam:bodyParam
+                       requestContentType:requestContentType
+                      responseContentType:responseContentType
+                             responseType:{{^returnType}}nil{{/returnType}}{{#returnType}}@"{{{ returnType }}}"{{/returnType}}
+                                authNames:{{#hasAuthMethods}}authSettings{{/hasAuthMethods}}{{^hasAuthMethods}}nil{{/hasAuthMethods}}];
 }
 
 @end

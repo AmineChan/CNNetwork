@@ -32,11 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic, strong) NSDictionary *apiKeyPrefix;
 
 /**
- *  Authentication Settings
- */
-@property (nonatomic, strong) NSDictionary *authSettings;
-
-/**
  * Username for HTTP Basic Authentication
  */
 @property (nonatomic, nullable) NSString *username;
@@ -50,11 +45,6 @@ NS_ASSUME_NONNULL_BEGIN
  * Access token for OAuth
  */
 @property (nonatomic, nullable) NSString *accessToken;
-
-/**
- * Temp folder for file download
- */
-@property (nonatomic, nullable) NSString *tempFolderPath;
 
 /**
  * SSL/TLS verification
@@ -140,6 +130,17 @@ NS_ASSUME_NONNULL_BEGIN
  * @param key Header key name.
  */
 - (nullable NSString *)defaultHeaderForKey:(NSString *)key;
+
+- (void)setBasicAuthWithName:(NSString *)name;
+- (void)setOAuth2AuthWithName:(NSString *)name;
+- (void)setApiKeyAuthWithName:(NSString *)name keyName:(NSString *)keyName isInHeader:(BOOL)isInHeader;
+
+/**
+ * Update header and query params based on authentication settings
+ */
+- (void)updateHeaderParams:(NSDictionary *__autoreleasing _Nullable * _Nullable)headers
+               queryParams:(NSDictionary *__autoreleasing _Nullable * _Nullable)querys
+             withAuthNames:(nullable NSArray *)authNames;
 
 @end
 

@@ -66,7 +66,8 @@ NSInteger const OSCUnknownResponseObjectErrorCode = 143528;
 #ifdef DEBUG
     NSLog(@"response----->%@ %@", data);
 #endif
-// remove "*" from className, if ends with "*"
+
+    // remove "*" from className, if ends with "*"
     if ([className hasSuffix:@"*"]) {
         className = [className substringToIndex:[className length] - 1];
     }

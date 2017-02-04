@@ -19,10 +19,10 @@ PODS:
     - CNNetwork
     - ISO8601 (~> 0.5)
     - JSONModel (~> 1.2)
-  - CNNetwork (0.0.1):
+  - CNNetwork (0.0.2):
     - AFNetworking
   - ISO8601 (0.6.0)
-  - JSONModel (1.5.1)
+  - JSONModel (1.7.0)
 
 DEPENDENCIES:
   - Api (from `Api`)
@@ -37,9 +37,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Api: ac2e3db49c5951e988c8e9eec0d7662864a231cc
-  CNNetwork: 86334737550108178ae4304ea5f0573dc6b54f85
+  CNNetwork: 94e6564215723ca19e2186bb3f90a69ddf973d14
   ISO8601: d3ea3ba9b752820cf92c6b47a9ee327e9f0e13fc
-  JSONModel: fd2553dc9e6608a3f35bfc956a14be35395d3852
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
 
 PODFILE CHECKSUM: b152acdc0d7fee640637dc3d85362a9e3c0d56be
 

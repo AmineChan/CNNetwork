@@ -27,7 +27,7 @@
          requestContentType:(NSString *)requestContentType
         responseContentType:(NSString *)responseContentType
                responseType:(NSString *)responseType
-               authSettings:(NSArray *)authSettings
+                  authNames:(NSArray *)authNames
 {
     self = [super init];
     if (self)
@@ -44,7 +44,7 @@
         _requestContentType = requestContentType;
         _responseContentType = responseContentType;
         _responseType = responseType;
-        _authSettings = authSettings;
+        _authNames = authNames;
     }
     
     return self;

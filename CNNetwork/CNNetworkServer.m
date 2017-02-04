@@ -30,7 +30,7 @@
     self = [super init];
     if (self)
     {
-        _serverConfigSet = [NSMutableDictionary<NSString *, CNNetworkServerConfig *> dictionary];
+        _serverConfigSet = [NSMutableDictionary dictionary];
     }
     
     return self;
