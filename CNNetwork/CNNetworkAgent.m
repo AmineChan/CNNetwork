@@ -274,7 +274,7 @@
 #endif
         dataTask = [manager cn_dataTaskWithHTTPMethod:request.HTTPMethod
                                             URLString:baseUrl
-                                           parameters:formParams? formParams:bodyParam
+                                           parameters:bodyParam? bodyParam:formParams
                             constructingBodyWithBlock:request.constructingBodyBlock
                                              progress:request.progressBlock
                                               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
