@@ -35,19 +35,6 @@
 
 - (IBAction)onLoginBtnClick:(UIButton *)sender
 {
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://pre.im/app/553d5ee930823445cd79709793df529f"]];
-//
-//    CNRequestApi *api = [[CNRequestApi alloc] init];
-//    api.requestAsssistant.customUrlRequest = request;
-//    [api startWithCompletionBlock:^(CNRequestApi *requestApi, id data, NSError *error) {
-//        
-//        ResultData *resultData = data;
-//        NSString *str = [[NSString alloc] initWithData:resultData.originData encoding:NSUTF8StringEncoding];
-//
-//        NSLog(@"%@", str);
-//    }];
-//    return;
-    
     OSCApiObjSignIn *param = [OSCApiObjSignIn new];
     param.email = @"youremail";
     param.password = @"yourpassword";
