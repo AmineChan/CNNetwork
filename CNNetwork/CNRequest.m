@@ -45,6 +45,7 @@
         _responseContentType = responseContentType;
         _responseType = responseType;
         _authNames = authNames;
+        _timeoutInterval = 30;
     }
     
     return self;

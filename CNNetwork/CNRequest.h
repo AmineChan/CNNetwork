@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^progressBlock)(NSProgress *progress);
 @property (nonatomic, copy) void (^constructingBodyBlock)(id <AFMultipartFormData> formData);
 @property (nonatomic, strong, readonly, nullable) NSURLSessionDataTask *dataTask;
+@property (nonatomic) NSTimeInterval timeoutInterval;
 
 - (instancetype)initWithTag:(NSInteger)tag
                  HTTPMethod:(NSString *)HTTPMethod

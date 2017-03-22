@@ -36,8 +36,8 @@
 - (IBAction)onLoginBtnClick:(UIButton *)sender
 {
     OSCApiObjSignIn *param = [OSCApiObjSignIn new];
-    param.email = @"youremail";
-    param.password = @"yourpassword";
+    param.email = @"328525910@qq.com";
+    param.password = @"aming99";
     [[param apiRequest] startWithCompletionBlock:^(CNRequest * _Nonnull request, id  _Nonnull data, NSError * _Nonnull error) {
         
     }];

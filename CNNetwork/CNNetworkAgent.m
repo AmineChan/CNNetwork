@@ -186,7 +186,6 @@
     __weak CNNetworkAgent *wself = self;
     NSURLSessionDataTask *dataTask = nil;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
     // setting request serializer
     if ([request.requestContentType isEqualToString:@"application/json"])
     {
@@ -206,6 +205,7 @@
         NSAssert(NO, @"Unsupported request type %@", request.requestContentType);
     }
     
+    manager.requestSerializer.timeoutInterval = request.timeoutInterval;
     // setting response serializer
     if ([request.responseContentType isEqualToString:@"application/json"])
     {
@@ -274,7 +274,7 @@
 #endif
         dataTask = [manager cn_dataTaskWithHTTPMethod:request.HTTPMethod
                                             URLString:baseUrl
-                                           parameters:bodyParam? bodyParam:formParams
+                                           parameters:formParams? formParams:bodyParam
                             constructingBodyWithBlock:request.constructingBodyBlock
                                              progress:request.progressBlock
                                               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
